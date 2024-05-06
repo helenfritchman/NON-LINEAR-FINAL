@@ -91,7 +91,73 @@ function changeBackgroundColor() {
 
 // Change background color every 3 seconds (adjust interval as needed)
 setInterval(changeBackgroundColor, 500);
-  
+
+// AAAA
+// Get the element for line 1
+const line1Element = document.getElementById('line1');
+let intervalId;
+
+// Function to generate a random letter
+function getRandomLetter() {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+}
+
+// Function to update line 1 with a random letter
+function updateLine1() {
+  let newLine1Content = '';
+  // Generate a random letter and append it to the existing content
+  for (let i = 0; i < 3; i++) {
+    newLine1Content += getRandomLetter();
+  }
+  line1Element.textContent = newLine1Content;
+}
+
+// Add event listener for mouseenter to the title element
+const titleElement = document.querySelector('.title');
+titleElement.addEventListener('mouseenter', function() {
+  // Call the updateLine1 function when mouse enters the title
+  intervalId = setInterval(updateLine1, 175); // Change every 100 milliseconds
+  updateLine1(); // Update once immediately
+});
+
+// Reset line 1 to its original content and clear the interval on mouseleave
+titleElement.addEventListener('mouseleave', function() {
+  clearInterval(intervalId); // Clear the interval
+  line1Element.textContent = 'NON';
+});
+
+// Get the element for line 2
+const line2Element = document.getElementById('line2');
+let intervalId2;
+
+// Function to update line 2 with a random letter
+function updateLine2() {
+  let newLine2Content = '';
+  // Generate a random letter and append it to the existing content
+  for (let i = 0; i < 6; i++) {
+    newLine2Content += getRandomLetter();
+  }
+  line2Element.textContent = newLine2Content;
+}
+
+// Add event listener for mouseenter to the title element
+titleElement.addEventListener('mouseenter', function() {
+  // Call the updateLine2 function when mouse enters the title
+  intervalId2 = setInterval(updateLine2, 175); // Change every 100 milliseconds
+});
+
+// Reset line 2 to its original content and clear the interval on mouseleave
+titleElement.addEventListener('mouseleave', function() {
+  clearInterval(intervalId2); // Clear the interval
+  line2Element.textContent = 'LINEAR';
+});
+
+// right arrow-----------------------------------------------------------------------------
+// Event listener for the right arrow
+document.getElementById("right-arrow").addEventListener("click", function() {
+    window.location.href = "hyperlinks.html";
+});
 
     
 });

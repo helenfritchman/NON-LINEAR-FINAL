@@ -56,14 +56,23 @@
     font-size: 26vw;
     line-height: 1; /* Adjust the line-height as needed */
     margin: 0;
+    transition: all 0.5s ease; /* Add a transition effect */
+    display: inline-block; /* Ensures that the title doesn't take full width */
 }
 
-#star{
+
+
+#star {
     width: 45vw;
     transform: translate(-30vw,-3vw);
     z-index: 1;
     cursor: pointer;
-}
+    transition: transform 0.2s ease; /* Add a smooth transition */
+  }
+  
+  #star:hover {
+    transform: translate(-30vw,-3vw) scale(1.1); /* Increase the size by 10% */
+  }
 
 #welcome{
     font-family: "Erica One", sans-serif;
@@ -81,6 +90,10 @@
     z-index: 2;
     opacity: 0;
 }
+
+#line2 {
+    max-width: 40vw; /* Adjust the maximum width as needed */
+  }
 /* DIAGONAL SPLIT! *****************************************************************************************/
 body, html {
     height: 100%;
@@ -137,63 +150,8 @@ body, html {
 #randomLink:hover {
     cursor: pointer;
 }
-/* 
-.box-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
 
-#box1 {
-    width: 30vw;
-    height: 30vw;
-    background-color: #EE6969;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-}
-
-#box2 {
-    width: 30vw;
-    height: 30vw;
-    background-color: #FFEFC6;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-}
-
-#box3 {
-    width: 30vw;
-    height: 30vw;
-    background-color: #47B874;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-}
-
-#box4 {
-    width: 30vw;
-    height: 30vw;
-    background-color: #b5FF3D;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-}
-
-#box5 {
-    width: 30vw;
-    height: calc(120vw - 85vw); /* Adjust height based on the total height of pinkbox minus the combined heights of box1, box2, and box3 */
-    /* background-color: #F5EE3E;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-    grid-row: 2 / span 2; /* Position box5 starting from the second row and spanning 2 rows */
-/* }
-
-#box6 {
-    width: 30vw;
-    height: calc(120vw - 85vw); /* Adjust height based on the total height of pinkbox minus the combined heights of box1, box2, and box3 */
-    /* background-color: #8361E4;
-    border-top: 7px solid black;
-    border-left: 7px solid black;
-    grid-row: 2 / span 2; /* Position box6 starting from the second row and spanning 2 rows */
-/* } */ 
+/* BOXES MAIN PAGE ***********************************************************/
 .box-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -405,38 +363,39 @@ body {
 
 #redtitle{
     width: 100vw;
+    margin-left: 8vw;
 }
 
 #redbody {
     display: flex;
-    justify-content: center; /* Center the flex items horizontally */
-    align-items: center; /* Center the flex items vertically */
-    background-color: #EE6969; /* Set the background color */
-    padding: 20px; /* Add some padding for spacing */
+    justify-content: center; 
+    align-items: center; 
+    background-color: #EE6969; 
+    padding: 20px; 
   }
   
   .text-column-red {
-    flex: 1; /* Let the text column flex to take remaining space */
-    padding-right: 20px; /* Add some right padding for spacing */
+    flex: 1; 
+    padding-right: 20px; 
     margin-left: 5vw;
-    color: black; /* Set the text color */
-    font-family: Arial, Helvetica, sans-serif; /* Set the font family */
-    font-size: 1rem; /* Set the font size */
-    line-height: 1.5; /* Set the line height */
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 1rem; 
+    line-height: 1.5; 
   }
   
   .image-column-red {
-    flex: 1; /* Let the image column flex to take remaining space */
-    display: flex; /* Use flexbox for image alignment */
-    flex-direction: column; /* Stack the images vertically */
-    align-items: center; /* Center the images horizontally */
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
   }
   
   #papers1, #papers2 {
-    width: 80%; /* Set the width of the images */
-    max-width: 100%; /* Ensure images don't exceed container width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add some right margin for spacing */
+    width: 80%; 
+    max-width: 100%; 
+    height: auto; 
+    margin-right: 20px; 
   }
 
 /* bottom bar  *************************************************************/
@@ -508,6 +467,7 @@ body {
 .right-arrow{
     width: 9vw;
     margin-bottom: 1vw;
+    
 }
 
 .click{
@@ -658,8 +618,8 @@ margin-top: 2vw;}
  }
 
  #map{
-    width:46vw;
-    margin-left: -3vw;
+  margin-left: 3vw;
+  
  }
 
  .special-word{ font-family: "Erica One", sans-serif;
